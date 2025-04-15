@@ -32,12 +32,12 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        // Create database
+        // Drop database
         $sql = "DROP DATABASE $mytext";
         if ($conn->query($sql) === TRUE) {
             echo "Database $mytext dropped successfully";
         } else {
-            echo "Error creating database: " . $conn->error;
+            echo "Error dropping database: " . $conn->error;
         }
 
         $conn->close();
